@@ -1,0 +1,44 @@
+<!-- src/main/resources/cs112/ud3/battle-view.fxml -->
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane xmlns="http://javafx.com/javafx/22"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="cs112.ud3.BattleController">
+    <top>
+        <VBox spacing="6" padding="12">
+            <Label text="Battle Arena" style="-fx-font-size: 20px; -fx-font-weight: bold;"/>
+            <HBox spacing="20">
+                <VBox spacing="4">
+                    <Label text="Player"/>
+                    <Label fx:id="playerNameLabel" text="Hero" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="playerHealthBar" prefWidth="220"/>
+                    <Label fx:id="playerHpLabel" text="0 / 0" />
+                </VBox>
+                <VBox spacing="4">
+                    <Label text="Monster"/>
+                    <Label fx:id="monsterNameLabel" text="—" style="-fx-font-weight: bold;"/>
+                    <ProgressBar fx:id="monsterHealthBar" prefWidth="220"/>
+                    <Label fx:id="monsterHpLabel" text="0 / 0" />
+                </VBox>
+            </HBox>
+            <Label fx:id="roundLabel" text="Round —"/>
+        </VBox>
+    </top>
+
+    <center>
+        <TextArea fx:id="battleLogArea" prefRowCount="12" wrapText="true" />
+    </center>
+
+    <bottom>
+        <HBox spacing="12" padding="12" alignment="CENTER">
+            <Button fx:id="startButton" text="Start" onAction="#onStart" prefWidth="100"/>
+            <Button fx:id="attackButton" text="Attack" onAction="#onAttack" prefWidth="100"/>
+            <Button fx:id="specialButton" text="Special" onAction="#onSpecial" prefWidth="100"/>
+            <Button fx:id="healButton" text="Heal" onAction="#onHeal" prefWidth="100"/>
+        </HBox>
+    </bottom>
+</BorderPane>
